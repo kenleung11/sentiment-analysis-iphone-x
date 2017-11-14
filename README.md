@@ -9,16 +9,16 @@ Data used from scraping all comments from the top ten YouTube videos based on vi
 ***
 #### Tools Used:  
 Python  
-YouTube API
+YouTube API  
 PyMongo  
 Pandas  
 Matplotlib  
-Seaborn 
-Natural Language Toolkit (NLTK)
-scikit-learn
-GENSIM
-TextBlob
-VADER
+Seaborn  
+Natural Language Toolkit (NLTK)  
+scikit-learn  
+GENSIM  
+TextBlob  
+VADER  
 d3.js  
 
 ***
