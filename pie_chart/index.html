@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 960px;
+  height: 500px;
+  position: relative;
+}
+path.slice{
+	stroke-width:2px;
+}
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+} 
+svg text.percent{
+	fill:white;
+	text-anchor:middle;
+	font-size:20px;
+}
+
+svg{
+	font-family: "Helvetica Neue"; 
+	font-size:30px;
+	text-anchor:middle;
+}
+
+</style>
+<body>
+<svg width="1500" height="40">
+<text x="150" y="30">Unlock Button</text>
+<text x="530" y="30">Face ID</text>
+<text x="910" y="30">Aesthetics</text>
+<text x="1290" y="30">Wireless Charging</text>
+
+</svg>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="Donut3D.js"></script>
+<script>
+
+var sentimentData=[
+	{label:"Positive", value1:0.43, value2:0.41, value3:0.42, value4:0.51, color:"#109618"},
+	{label:"Negative", value1:0.24, value2:0.30, value3:0.27, value4:0.21, color:"#DC3912"},
+	{label:"Neutral", value1:0.33, value2:0.29, value3:0.31, value4:0.28, color:"#3366CC"},
+];
+
+var svg = d3.select("body").append("svg").attr("width",1500).attr("height",300);
+
+svg.append("g").attr("id","unlockData");
+svg.append("g").attr("id","faceData");
+svg.append("g").attr("id","looksData");
+svg.append("g").attr("id","wirelessData");
+
+start = 150;
+width = 380;
+
+Donut3D.draw("unlockData", unlockData(), start, 150, 130, 100, 30, 0);
+Donut3D.draw("faceData", faceData(), start+width, 150, 130, 100, 30, 0);
+Donut3D.draw("looksData", looksData(), start+2*width, 150, 130, 100, 30, 0);
+Donut3D.draw("wirelessData", wirelessData(), start+3*width, 150, 130, 100, 30, 0);
+
+function unlockData(){
+	return sentimentData.map(function(d){ 
+		return {label:d.label, value:d.value1, color:d.color};});
+}
+
+function faceData(){
+	return sentimentData.map(function(d){ 
+		return {label:d.label, value:d.value2, color:d.color};});
+}
+
+function looksData(){
+	return sentimentData.map(function(d){ 
+		return {label:d.label, value:d.value3, color:d.color};});
+}
+
+function wirelessData(){
+	return sentimentData.map(function(d){ 
+		return {label:d.label, value:d.value4, color:d.color};});
+}
+
+</script>
+</body>
