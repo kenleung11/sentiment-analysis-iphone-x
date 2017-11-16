@@ -23,4 +23,4 @@ d3.js
 
 ***
 
-#### Check out my blog [Aggregating Consumer Sentiment of the new iPhone X](https://kennythedatascientist.weebly.com/)
+#### Check out my blog [Aggregating Consumer Sentiment of the new iPhone X](https://kennythedatascientist.weebly.com/blog/aggregating-consumer-sentiment-of-the-new-iphone-x)
